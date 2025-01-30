@@ -1,0 +1,203 @@
+/* Reset and Box-Sizing */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* ---------------- HEADER ---------------- */
+#headerWrapper {
+  background-color: whitesmoke;
+  padding: 0.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem $gutter;
+}
+
+.logo {
+  flex: 0 0 auto; /* Prevents resizing */
+}
+
+.site-name {
+  font-size: 1.8rem;
+  font-family: $headingFont;
+  font-weight: 700;
+  color: $primaryColor;
+  flex-grow: 1; /* Ensures site name takes available space */
+  text-align: center;
+}
+
+.phone {
+  flex: 0 0 auto; /* Prevents resizing */
+}
+
+.phone a {
+  font-size: 1.2rem;
+  font-family: $defaultFont;
+  color: $primaryColor;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.phone a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo img {
+    margin-bottom: 8px; /* Adds space below the logo */
+  }
+
+  .phone {
+    margin-top: 8px;
+  }
+}
+/* ---------------- NAVIGATION (Mobile: Vertical) ---------------- */
+/* ---------------- NAVIGATION (Mobile: Vertical) ---------------- */
+#navWrapper {
+  background-color: $primaryColor;
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column; /* Forces a vertical menu */
+  align-items: flex-start; /* Aligns links to the left */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+nav ul li {
+  list-style-type: none;
+  width: 100%; /* Ensure full width */
+}
+
+nav ul li a {
+  color: white;
+  font-family: $defaultFont;
+  text-decoration: none;
+  display: block;
+  padding: 0.8rem $gutter;
+  width: 100%; /* Make links take up full width */
+}
+
+nav ul li a:hover {
+  background-color: $accentColor;
+}
+
+nav ul li.active a {
+  background-color: $secondaryColor;
+  color: $darkGrey;
+  border-radius: 8px;
+}
+
+/* ---------------- MAIN CONTENT (Cards in One Column) ---------------- */
+main {
+  padding: 1rem 2vw;
+}
+main h1 {
+  font-family: $headingFont;
+}
+//apply to all children
+main > div > div {
+  text-align: center;
+  h2 {
+    font-size: 1.2rem;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.parent1 {
+  margin: 0 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 8px;
+  column-gap: 8px;
+  div {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 200px;
+  }
+}
+
+.parent1 > div {
+  text-align: center;
+  background: rgb(221, 234, 239);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 3px solid $primaryColor;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  h2 {
+    font-family: $headingFont;
+    font-size: 1.4rem;
+    color: $primaryColor;
+    margin-bottom: 10px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+section div {
+  width: 100%;
+  padding: 1rem $gutter;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ---------------- FOOTER ---------------- */
+#footerWrapper {
+  background-color: $primaryColor;
+  padding: 1rem;
+}
+footer {
+  font-size: 0.85rem;
+  padding: 1rem $gutter;
+  color: white;
+  text-align: center;
+  font-family: $defaultFont;
+  line-height: $leading;
+
+  a {
+    color: $secondaryColor;
+    font-weight: 600;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

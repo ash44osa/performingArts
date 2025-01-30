@@ -1,0 +1,14 @@
+/* ---------------- NAVIGATION (Desktop: Horizontal) ---------------- */
+@media (min-width: 1024px) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 75rem;
+    margin: 0 auto;
+  }
+
+  nav ul li a {
+    padding: 0.5rem $gutter;
+  }
+}
